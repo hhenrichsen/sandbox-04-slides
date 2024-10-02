@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend and Databases</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Backend and Databases</h1>
+          <h5>Sandbox 04 | Hunter Henrichsen</h5>
+        </section>
+        <section>
+          <h2>Pre Lecture</h2>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:megaphone"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-red)"
+              ></iconify-icon>
+              <h3>Events and Announcements</h3>
+            </header>
+            <p>
+              <ul>
+                <li>Lucid Programming Competition - October 26th at 9:00AM</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:newspaper"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-red)"
+              ></iconify-icon>
+              <h3>News</h3>
+            </header>
+          </section>
+        </section>
+        <section>
+          <h2>Demo - Responsiveness</h2>
+        </section>
+        <section>
+          <h2>Backend and Databases</h2>
+          <section>
+            <p>
+              Your backend is your haven. Effectively everything on the frontend
+              can be accessed and mutated by the user. In an ideal backend, that
+              should not be the case.
+            </p>
+          </section>
+        </section>
+        <section>
+          <h2>Ways to Communicate</h2>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:network"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>REST and HTTP</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:network"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>REST and HTTP</h3>
+            </header>
+            <pre>
+                <code>
+GET /api/v1/users
+                </code>
+              </pre>
+            <pre>
+                <code>
+[
+  {
+    "id": 1
+  },
+  {
+    "id": 2
+  },
+  {
+    "id": 3
+  }
+]
+                </code>
+              </pre>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:network"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>REST and HTTP</h3>
+            </header>
+            <pre>
+                <code>
+GET /api/v1/users
+                </code>
+              </pre>
+            <pre>
+                <code>
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "johndoe@example.com"
+  }
+]
+                </code>
+              </pre>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:network"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>GraphQL</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:network"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>GraphQL</h3>
+            </header>
+            <pre>
+              <code>
+query {
+  users {
+    id
+    name
+    email
+  }
+}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:network"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>RPC, gRPC, and tRPC</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:network"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>gRPC</h3>
+            </header>
+            <pre>
+              <code>
+message Person {
+	string name = 1;
+}
+
+message Greeting {
+	string reply = 1;
+}
+
+service Hello {
+	rpc Greet(Person) returns (Greeting) {}
+}
+              </code>
+            </pre>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:network"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>tRPC</h3>
+            </header>
+            <pre>
+              <code>
+export const appRouter = router({
+  postList: publicProcedure.query(async () => {
+    const posts = await prisma.post.findMany();
+    return posts;
+  }),
+});
+
+export type AppRouter = typeof appRouter;
+              </code>
+            </pre>
+          </section>
+        </section>
+        <section>
+          <h2>Common Database Attributes</h2>
+          <section>
+            <header>
+              <h3>Relational</h3>
+            </header>
+            <p><strong>Examples:</strong> PostgreSQL, mySQL, msSQL, MariaDB</p>
+            <p>The fundamental units of data are:</p>
+            <ul>
+              <li class="fragment">
+                <strong>Databases</strong>, which contain schemas and tables
+              </li>
+              <li class="fragment">
+                <strong>Schemas</strong> (varies by implementation), which are
+                an abstraction to prevent collisions between multiple clients on
+                the same database, or are interchangeable with databases.
+              </li>
+              <li class="fragment">
+                <strong>Tables</strong>, which are composed of rows and a set of
+                typed fields
+              </li>
+              <li class="fragment">
+                <strong>Rows</strong>, which contain values for each of the
+                table's fields.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <header>
+              <h3>Document</h3>
+            </header>
+            <p><strong>Examples:</strong> mongoDB, CouchDB, DocumentDB</p>
+            <p>The fundamental units of data are:</p>
+            <ul>
+              <li class="fragment">
+                <strong>Documents</strong>, which are JSON that can be queried
+                and mutated as needed.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <header>
+              <h3>Graph</h3>
+            </header>
+            <p><strong>Examples:</strong> Neo4j, Neptune</p>
+            <p>The fundamental units of data are:</p>
+            <ul>
+              <li class="fragment">
+                <strong>Nodes</strong>, which hold a set of properties
+              </li>
+              <li class="fragment">
+                <strong>Labels</strong>, which classify a node or attach
+                metadata
+              </li>
+              <li class="fragment">
+                <strong>Edges</strong> or <strong>Relationships</strong>, which
+                link two nodes and hold a set of properties
+              </li>
+              <li class="fragment">
+                <strong>Properties</strong>, which store information about a
+                given node
+              </li>
+            </ul>
+          </section>
+          <section>
+            <header>
+              <h3>Key / Value</h3>
+            </header>
+            <p><strong>Examples:</strong> Redis, DynamoDB</p>
+            <p>The fundamental units of data are:</p>
+            <ul>
+              <li class="fragment">
+                <strong>Keys</strong>, which identify a value uniquely, and
+              </li>
+              <li class="fragment">
+                <strong>Values</strong> or <strong>Properties</strong>, which
+                depending on implementation allow for various types of data to
+                be stored.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <header>
+              <h3>Blob</h3>
+            </header>
+            <p><strong>Examples:</strong> s3, Blob Storage</p>
+            <p>The fundamental unit of data are:</p>
+            <ul>
+              <li class="fragment">
+                <strong>Objects</strong>, normally some binary that is required
+                to run your app (user profile pictures, shared documents, etc).
+              </li>
+            </ul>
+          </section>
+          <section>
+            <header>
+              <h3>In-Memory</h3>
+            </header>
+            <p><strong>Examples:</strong> Redis, ElastiCache</p>
+          </section>
+          <section>
+            <header>
+              <h3>Flatfile</h3>
+            </header>
+            <p><strong>Examples:</strong> SQLite, H2</p>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>

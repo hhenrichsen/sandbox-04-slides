@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototyping, Frontend, and Responsiveness</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Prototyping, Frontend, and Responsiveness</h1>
+          <h5>Sandbox 04 | Hunter Henrichsen</h5>
+        </section>
+        <section>
+          <h2>Pre Lecture</h2>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:megaphone"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-red)"
+              ></iconify-icon>
+              <h3>Events and Announcements</h3>
+            </header>
+            <div class="left">
+              <ul>
+                <li class="fragment">Lucid Tech Talk - September 17th!</li>
+                <li class="fragment">
+                  No Office Hours on Thursday or next Tuesday
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:newspaper"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-red)"
+              ></iconify-icon>
+              <h3>News</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:refresh-cw"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-peach)"
+              ></iconify-icon>
+              <h3>Curiosity</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Database for Analytics</h3>
+            </header>
+            <div class="left">
+              <ul>
+                <li class="fragment">
+                  When you're starting off, it might make sense to use something
+                  off-the-shelf
+                </li>
+                <li class="fragment">
+                  Otherwise, a similar database to what you're already using can
+                  be good:
+                  <ul>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                  </ul>
+                </li>
+                <li class="fragment">
+                  Snowflake and similar products are used frequently in the
+                  industry
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Fast Iteration</h3>
+            </header>
+            <div class="left">
+              <ul>
+                <li class="fragment">
+                  Learn what you can at the lowest cost tier
+                </li>
+                <li class="fragment">
+                  I personally use Postgres, Ktor, AlpineJS, and HTMX for my
+                  projects
+                </li>
+                <li class="fragment">
+                  Modern frameworks work well and give you a lot for free
+                </li>
+                <li class="fragment">
+                  Avoid Context Switching
+                  <span class="fragment"
+                    >(so probably something fullstack)</span
+                  >
+                </li>
+                <li class="fragment">
+                  If you don't have a favorite already, try a couple tools and
+                  pick one or two to pursue
+                </li>
+                <li class="fragment">
+                  Also, I like Tailwind / UnoCSS for prototyping
+                  <span class="fragment">(but not as much for production)</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section>
+          <h2>Prototyping</h2>
+          <section></section>
+          <section data-auto-animate="">
+            <header>
+              <iconify-icon
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Learn from Prior Art</h3>
+            </header>
+          </section>
+          <section data-auto-animate="">
+            <header>
+              <iconify-icon
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Keep Things Rough</h3>
+            </header>
+          </section>
+          <section data-auto-animate="">
+            <header>
+              <iconify-icon
+                data-id="multiple-versions-header-icon"
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Try Multiple Versions</h3>
+            </header>
+          </section>
+          <section data-auto-animate="">
+            <header>
+              <iconify-icon
+                data-id="multiple-versions-header-icon"
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Try Multiple Versions</h3>
+            </header>
+            <img src="/thumbnails.png" width="600" />
+            <div class="attribution">Thumbnails by Ahed Khatib</div>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Get Things in Your (and Users') Hands</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                data-id="multiple-versions-header-icon"
+                icon="lucide:hammer"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-sky)"
+              ></iconify-icon>
+              <h3>Let's Design a Page</h3>
+            </header>
+          </section>
+        </section>
+        <section>
+          <h2>Frontend</h2>
+          <section></section>
+          <section data-auto-animate="">
+            <header data-id="dom-header">
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>The Document Object Model</h3>
+            </header>
+          </section>
+          <section data-auto-animate="">
+            <header data-id="dom-header">
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>The Document Object Model</h3>
+            </header>
+            <pre class="fragment">
+            <code><form>
+	<label for="name">
+		Name
+	</label>
+	<input id="name" name="name" type="text" />
+	<button id="submit" type="submit">
+		Submit
+	</button>
+</form></code>
+            </pre>
+            <pre
+              class="fragment"
+            ><code>document.getElementById('submit').addEventListener('click', (event) => {
+	event.preventDefault(); // don't reload the page
+	console.log(document.getElementById('name').value)
+})</code></pre>
+          </section>
+          <section data-auto-animate="">
+            <header data-id="dom-header">
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-green)"
+              ></iconify-icon>
+              <h3>The Document Object Model</h3>
+            </header>
+            <div class="left">
+              <div class="fragment">Sometimes the DOM is not enough:</div>
+              <ol>
+                <li class="fragment"><code>canvas</code> elements</li>
+                <li class="fragment">WebGL</li>
+                <li class="fragment">WebGPU</li>
+              </ol>
+            </div>
+          </section>
+          <section>
+            <header data-id="dom-header">
+              <iconify-icon
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Responsiveness</h3>
+            </header>
+          </section>
+          <section>
+            <header data-id="dom-header">
+              <iconify-icon
+                icon="lucide:lightbulb"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>Picking a Framework</h3>
+            </header>
+          </section>
+        </section>
+        <section>
+          <header data-id="dom-header">
+            <iconify-icon
+              icon="lucide:hammer"
+              width="3rem"
+              height="3rem"
+              style="color: var(--ctp-mocha-sky)"
+            ></iconify-icon>
+            <h2>Bootstrapping a Project</h2>
+          </header>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
