@@ -73,7 +73,7 @@ class TimerElement extends HTMLElement {
       .padStart(2, '0')}</span>`;
   }
 
-  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+  attributeChangedCallback() {
     this.#readAttributes();
     this.#update();
   }
@@ -85,7 +85,7 @@ class TimerElement extends HTMLElement {
     this.getAttributeNames().forEach(name => {
       const attr = this.getAttribute(name);
       if (attr) {
-        this.attributeChangedCallback(name, '', attr);
+        this.attributeChangedCallback();
       }
     });
 
