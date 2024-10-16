@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing and Tooling</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Testing and Tooling</h1>
+          <h5>Sandbox 04 | Hunter Henrichsen</h5>
+        </section>
+        <section>
+          <h2>Pre Lecture</h2>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:megaphone"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-red)"
+              ></iconify-icon>
+              <h3>Events and Announcements</h3>
+            </header>
+            <ul>
+              <li>
+                Lucid Programming Competition -
+                <div>
+                  <span style="color: var(--ctp-mocha-blue)"
+                    >lucid.co/programming-competition</span
+                  >
+                  -
+                </div>
+                October 26th at 9:00AM
+              </li>
+            </ul>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:newspaper"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-red)"
+              ></iconify-icon>
+              <h3>News</h3>
+            </header>
+          </section>
+        </section>
+        <section>
+          <h2>Authentication</h2>
+          <section></section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-peach)"
+              ></iconify-icon>
+              <h3>Password Salting</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-peach)"
+              ></iconify-icon>
+              <h3>Rainbow Table</h3>
+            </header>
+            <table>
+              <thead>
+                <tr>
+                  <th>password</th>
+                  <th>hash (sha256)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>hunter2</td>
+                  <td class="small">
+                    <code>
+                      f52fbd32b2b3b86ff88ef6c490628285f482af15ddcb29541f94bcf526a3f6c7
+                    </code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>hunter3</td>
+                  <td class="small">
+                    <code>
+                      fb8c2e2b85ca81eb4350199faddd983cb26af3064614e737ea9f479621cfa57a
+                    </code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>password123</td>
+                  <td class="small">
+                    <code>
+                      ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f
+                    </code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-peach)"
+              ></iconify-icon>
+              <h3>Password Salting</h3>
+            </header>
+            <table>
+              <thead>
+                <tr>
+                  <th>email</th>
+                  <th>displayname</th>
+                  <th>password</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>hunter@example.com</td>
+                  <td>Hunter</td>
+                  <td class="small">
+                    <code>
+                      f52fbd32b2b3b86ff88ef6c490628285f482af15ddcb29541f94bcf526a3f6c7
+                    </code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section>
+          <h2>Testing</h2>
+          <section></section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:lightbulb"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-yellow)"
+              ></iconify-icon>
+              <h3>When to Test</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-peach)"
+              ></iconify-icon>
+              <h3>Unit Testing</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-peach)"
+              ></iconify-icon>
+              <h3>Integration Testing</h3>
+            </header>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:book-open"
+                width="2em"
+                height="2em"
+                style="color: var(--ctp-mocha-peach)"
+              ></iconify-icon>
+              <h3>End to End Testing</h3>
+            </header>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
