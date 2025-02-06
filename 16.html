@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access Models</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Access Models</h1>
+          <h5>Sandbox 04 | Hunter Henrichsen</h5>
+        </section>
+        <section>
+          <h2>Pre Lecture</h2>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:megaphone"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-red)"
+              ></iconify-icon>
+              <h3>Events and Announcements</h3>
+            </header>
+            <ul>
+              <li>
+                HackUSU
+                <div>
+                  <span style="color: var(--ctp-mocha-blue)"
+                    >https://huntsman.usu.edu/hackusu/</span
+                  >
+                  -
+                </div>
+                February 28th - March 1st in Logan, Utah
+              </li>
+            </ul>
+          </section>
+          <section>
+            <header>
+              <iconify-icon
+                icon="lucide:newspaper"
+                width="2rem"
+                height="2rem"
+                style="color: var(--ctp-mocha-red)"
+              ></iconify-icon>
+              <h3>News</h3>
+            </header>
+          </section>
+        </section>
+        <section>
+          <header>
+            <iconify-icon
+              icon="lucide:book-open"
+              width="2rem"
+              height="2rem"
+              style="color: var(--ctp-mocha-peach)"
+            ></iconify-icon>
+            <h2>Access Models</h2>
+          </header>
+          <section></section>
+          <section>
+            <h3>Owner-Only</h3>
+            <p><i>Examples: eCommerce Customers</i></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Resource</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>id: serial</code></td>
+                </tr>
+                <tr>
+                  <td><code>owner: user.id</code></td>
+                </tr>
+                <tr>
+                  <td><code>content: text</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3>Member and Admin</h3>
+            <p><i>Examples: Notion, Slack</i></p>
+            <div class="row-gaps">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Resource</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id: uuid</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>owner: serial</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>content: text</code></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ResourceMembership</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id: serial</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>resource_id: resource.id</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_id: user.id</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>is_admin: bool</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section>
+            <h3>Premade Roles</h3>
+            <p><i>Examples: Google Drive, Lucid</i></p>
+            <div class="row-gaps">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Resource</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id: uuid</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>owner: serial</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>content: text</code></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ResourceMembership</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id: serial</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>resource_id: resource.id</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_id: user.id</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>role_id: short?</code></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Role (enum)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>editor</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>commenter</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>viewer</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section>
+            <h3>Custom Roles</h3>
+            <p><i>Examples: Discord</i></p>
+            <div class="row-gaps small">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Resource</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id: uuid</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>owner: serial</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>content: text</code></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ResourceMembership</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id: serial</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>resource_id: resource.id</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>user_id: user.id</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>role_id: role.id</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>permission_overrides: integer(128)</code></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id: serial</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>permissions: integer(128)</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>name: text</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>color: varchar(6)</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section>
+            <h3>Custom Roles</h3>
+            <div class="small">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Permission (enum)</th>
+                    <th>Bits</th>
+                    <th>Binary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>CreateInstantInvite</code></td>
+                    <td><code>1</code></td>
+                    <td><code>00000000001</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>KickMembers</code></td>
+                    <td><code>2</code></td>
+                    <td><code>00000000010</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>BanMembers</code></td>
+                    <td><code>4</code></td>
+                    <td><code>00000000100</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Administrator</code></td>
+                    <td><code>8</code></td>
+                    <td><code>00000001000</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>ManageChannels</code></td>
+                    <td><code>16</code></td>
+                    <td><code>00000010000</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>ManageGuild</code></td>
+                    <td><code>32</code></td>
+                    <td><code>00000100000</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>AddReaction</code></td>
+                    <td><code>64</code></td>
+                    <td><code>00001000000</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>ViewAuditLog</code></td>
+                    <td><code>128</code></td>
+                    <td><code>00010000000</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>PrioritySpeaker</code></td>
+                    <td><code>256</code></td>
+                    <td><code>00100000000</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Stream</code></td>
+                    <td><code>512</code></td>
+                    <td><code>01000000000</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>ViewChannel</code></td>
+                    <td><code>1024</code></td>
+                    <td><code>10000000000</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+        <section>
+          <header>
+            <iconify-icon
+              icon="lucide:book-open"
+              width="2rem"
+              height="2rem"
+              style="color: var(--ctp-mocha-yellow)"
+            ></iconify-icon>
+            <h2>Accounts and Organizations</h2>
+          </header>
+          <section></section>
+        </section>
+        <section>
+          <header>
+            <iconify-icon
+              icon="lucide:play-circle"
+              width="2rem"
+              height="2rem"
+              style="color: var(--ctp-mocha-green)"
+            ></iconify-icon>
+            <h2>Let's Build a Code Snippet Platform</h2>
+          </header>
+          <section></section>
+          <section>
+            <div class="left">
+              <p class="fragment">Requirements</p>
+              <ul>
+                <li class="fragment">Allow users to sign up and sign in</li>
+                <li class="fragment">
+                  Users should be able to create snippets, which contain 1 or
+                  more code block "files" inside
+                </li>
+                <li class="fragment">
+                  Users should be able to add other users that can edit snippets
+                </li>
+                <li class="fragment">
+                  Users should be able to comment on snippets
+                </li>
+                <li class="fragment">
+                  Users should be able to list snippets created by a specific
+                  user
+                </li>
+                <li class="fragment">
+                  Users should be able to mark snippets as private
+                </li>
+              </ul>
+              <p class="fragment">Bonus:</p>
+              <ul>
+                <li class="fragment">
+                  Users should be able to create organizations which contain 1
+                  or more users
+                </li>
+                <li class="fragment">
+                  Users should be able to create snippets within an organization
+                </li>
+                <li class="fragment">
+                  Users should be able to list snippets created by an
+                  organization
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>

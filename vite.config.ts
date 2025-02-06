@@ -14,6 +14,7 @@ export default defineConfig({
         '04': resolve(__dirname, '04.html'),
         '06': resolve(__dirname, '06.html'),
         '12': resolve(__dirname, '12.html'),
+        '16': resolve(__dirname, '16.html'),
       },
     },
   },
